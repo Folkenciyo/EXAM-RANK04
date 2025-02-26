@@ -63,8 +63,6 @@ int main(int argc, char *argv[], char *env[]) {
             }
 
         } else if (i != 0 && strcmp(argv[i], "|") == 0) {
-            if (argv[i + 1] == NULL)
-                ft_putstr_fd2("error: syntax error", NULL);
             pipe(fd);
             if (fork() == 0) {
                 dup2(fd[1], STDOUT_FILENO);
